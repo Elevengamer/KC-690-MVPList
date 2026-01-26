@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+<head>
+    <title>Add Event Score</title>
+</head>
+<body>
+    <h1>Add Event Score</h1>
+    <form wicket:id="form">
+        <div wicket:id="feedback"></div>
+        <div>
+            <label>Event:</label>
+            <select wicket:id="event"></select>
+        </div>
+        <div>
+            <label>Date:</label>
+            <input type="text" wicket:id="date" />
+        </div>
+        <h2>Player Scores</h2>
+        <div>
+            <label>Player:</label>
+            <select wicket:id="player"></select>
+        </div>
+        <div>
+            <label>Score:</label>
+            <input type="text" wicket:id="score" />
+        </div>
+        <div>
+            <label>Rank:</label>
+            <input type="number" wicket:id="rank" />
+        </div>
+        <button wicket:id="addPlayer">Add Player</button>
+        <hr/>
+        <h3>Scores to be added</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Player</th>
+                    <th>Score</th>
+                    <th>Rank</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr wicket:id="scores">
+                    <td><span wicket:id="playername"></span></td>
+                    <td><span wicket:id="playerscore"></span></td>
+                    <td><span wicket:id="playerrank"></span></td>
+                    <td><button wicket:id="remove">Remove</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <hr/>
+        <button wicket:id="save">Save</button>
+    </form>
+</body>
+</html>

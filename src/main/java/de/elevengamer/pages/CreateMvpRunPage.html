@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+<head>
+    <meta charset="utf-8" />
+    <title>Create MVP Run</title>
+</head>
+<body>
+    <h1>Create MVP Run</h1>
+    <form wicket:id="form">
+        <div>
+            <label for="runId">Run Number</label>
+            <input wicket:id="runId" type="text" id="runId" />
+        </div>
+        <button type="submit">Create Run</button>
+    </form>
+
+    <hr/>
+
+    <h1>View MVP Run</h1>
+    <select wicket:id="runs"></select>
+
+    <table wicket:id="mvpStatesTable">
+        <thead>
+            <tr>
+                <th>Player Name</th>
+                <th>Event</th>
+                <th>Rank</th>
+                <th>Date</th>
+                <th>Has MVP</th>
+                <th>Banned</th>
+                <th>Reason for Ban</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr wicket:id="mvpStates">
+                <td wicket:id="playerName"></td>
+                <td wicket:id="event"></td>
+                <td wicket:id="rank"></td>
+                <td wicket:id="eventDate"></td>
+                <td wicket:id="hasMvp"></td>
+                <td wicket:id="isMvpBanned"></td>
+                <td wicket:id="reasonForBan"></td>
+            </tr>
+        </tbody>
+    </table>
+    <br/>
+    <a wicket:id="homePageLink">Return to Homepage</a>
+</body>
+</html>

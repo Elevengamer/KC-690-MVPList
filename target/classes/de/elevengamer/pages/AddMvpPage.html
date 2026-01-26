@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+<head>
+    <meta charset="utf-8" />
+    <title>Add MVP</title>
+</head>
+<body>
+    <h1>Add MVP to Run</h1>
+
+    <div wicket:id="feedback"></div>
+
+    <div>
+        <label>Select MVP Run:</label>
+        <select wicket:id="runsDropDown"></select>
+    </div>
+
+    <div wicket:id="mvpContainer">
+        <hr/>
+        <h2>Add New MVP</h2>
+        <form wicket:id="addMvpForm">
+            <div>
+                <label>Player:</label>
+                <select wicket:id="playersDropDown"></select>
+            </div>
+            <div>
+                <label>Event:</label>
+                <select wicket:id="eventsDropDown"></select>
+            </div>
+            <div>
+                <label>Rank:</label>
+                <input wicket:id="rankInput" type="number" />
+            </div>
+            <div>
+                <label>Date:</label>
+                <input wicket:id="dateInput" type="text" />
+            </div>
+            <button wicket:id="addMvpButton" type="submit">Add MVP</button>
+        </form>
+
+        <hr/>
+        <h2>Assigned MVPs</h2>
+        <table wicket:id="assignedMvpsListContainer">
+            <thead>
+                <tr>
+                    <th>Player</th>
+                    <th>Event</th>
+                    <th>Rank</th>
+                    <th>Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr wicket:id="assignedMvpsListView">
+                    <td wicket:id="playerName"></td>
+                    <td wicket:id="event"></td>
+                    <td wicket:id="rank"></td>
+                    <td wicket:id="eventDate"></td>
+                    <td><a wicket:id="removeMvpLink">Remove</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br/>
+    <a wicket:id="homePageLink">Return to Homepage</a>
+</body>
+</html>

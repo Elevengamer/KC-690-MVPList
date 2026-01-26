@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+<head>
+    <meta charset="utf-8" />
+    <title>Convert MVP Run to HTML</title>
+</head>
+<body>
+    <h1>Convert MVP Run to HTML</h1>
+
+    <div wicket:id="feedback"></div>
+
+    <div>
+        <label>Select MVP Run:</label>
+        <select wicket:id="runsDropDown"></select>
+    </div>
+
+    <form wicket:id="convertForm">
+        <button wicket:id="convertButton" type="submit">Convert to HTML</button>
+    </form>
+
+    <div wicket:id="generatedFileLinkContainer">
+        <p>Generated file: <a wicket:id="generatedFileLink"></a></p>
+    </div>
+
+    <br/>
+    <a wicket:id="homePageLink">Return to Homepage</a>
+
+</body>
+</html>

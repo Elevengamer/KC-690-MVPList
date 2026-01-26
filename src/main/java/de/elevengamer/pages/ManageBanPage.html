@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+<head>
+    <meta charset="utf-8" />
+    <title>Manage Bans</title>
+</head>
+<body>
+    <h1>Manage Player Bans</h1>
+
+    <div wicket:id="feedback"></div>
+
+    <form wicket:id="banForm">
+        <div>
+            <label>Select MVP Run:</label>
+            <select wicket:id="runsDropDown"></select>
+        </div>
+
+        <div wicket:id="playerSelectionContainer">
+            <div>
+                <label>Select Player:</label>
+                <select wicket:id="playersDropDown"></select>
+            </div>
+
+            <div>
+                <strong>Current Status:</strong> <span wicket:id="banStatusLabel"></span>
+            </div>
+
+            <div>
+                <label for="reason">Ban Reason:</label>
+                <input wicket:id="reasonInput" type="text" id="reason" />
+            </div>
+
+            <button wicket:id="banButton" type="submit">Ban Player</button>
+            <button wicket:id="removeBanButton" type="submit">Remove Ban</button>
+        </div>
+    </form>
+    <br/>
+    <a wicket:id="homePageLink">Return to Homepage</a>
+</body>
+</html>
