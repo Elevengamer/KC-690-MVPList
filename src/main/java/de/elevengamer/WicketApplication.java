@@ -37,10 +37,7 @@ public class WicketApplication extends WebApplication
 	{
 		super.init();
 
-		// Execute git pull on application startup
-		executeGitPull();
-
-		// needed for the styling used by the quickstart
+		// add your configuration here
 		getCspSettings().blocking()
 			.add(CSPDirective.STYLE_SRC, CSPDirectiveSrcValue.SELF)
 			.add(CSPDirective.STYLE_SRC, "https://fonts.googleapis.com/css")
@@ -57,21 +54,4 @@ public class WicketApplication extends WebApplication
 		// getResourceSettings().addResourceFolder(new File("doc"));
 	}
 
-	private void executeGitPull() {
-		String projectPath = System.getProperty("user.dir");
-		System.out.println("Attempting to execute git pull in project path: " + projectPath);
-
-		try {
-			String command = "powershell.exe -NoExit -Command \"Set-Location -Path '" + projectPath + "'; git pull\"";
-			ProcessBuilder builder = new ProcessBuilder("cmd.exe", "/c", command);
-			builder.redirectErrorStream(true);
-
-			System.out.println("Launching terminal for git pull...");
-			Process process = builder.start();
-
-		} catch (IOException e) {
-			System.err.println("Error executing git pull command: " + e.getMessage());
-			e.printStackTrace();
-		}
-	}
 }

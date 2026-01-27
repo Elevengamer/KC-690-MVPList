@@ -114,6 +114,9 @@ public class ConvertRunToHtmlPage extends WebPage {
                         generatedFileLinkContainer.setVisible(true);
 
                         success("HTML file generated successfully and link added to index.html!");
+
+
+
                     } catch (IOException e) {
                         error("Error generating HTML file or updating index.html: " + e.getMessage());
                     }
@@ -158,3 +161,4 @@ public class ConvertRunToHtmlPage extends WebPage {
         return html.toString();
     }
 }
+
