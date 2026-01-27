@@ -1,5 +1,7 @@
 package de.elevengamer.classes
 
+import com.google.gson.Gson
+import java.io.File
 import java.io.Serializable
 
 class MvpRun(
@@ -10,6 +12,21 @@ class MvpRun(
         fun create(runId: Int, playerList: List<Player>): MvpRun {
             val playerMvpStates = playerList.map { PlayerMvpState(it.name) }.toMutableList()
             return MvpRun(runId, playerMvpStates)
+        }
+
+        fun loadMvpRuns(filePath: String): MutableList<MvpRun> {
+            val file = File(filePath)
+            return if (file.exists()) {
+                val json = file.readText()
+                Gson().fromJson(json, Array<MvpRun>::class.java).toMutableList()
+            } else {
+                mutableListOf()
+            }
+        }
+
+        fun saveMvpRuns(filePath: String, mvpRuns: List<MvpRun>) {
+            val json = Gson().toJson(mvpRuns)
+            File(filePath).writeText(json)
         }
     }
 
