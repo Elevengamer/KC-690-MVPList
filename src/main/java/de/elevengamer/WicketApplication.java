@@ -1,5 +1,6 @@
 package de.elevengamer;
 
+import java.io.IOException;
 import de.elevengamer.pages.AddEventScorePage;
 import de.elevengamer.pages.AddMvpPage;
 import de.elevengamer.pages.CreateMvpRunPage;
@@ -36,6 +37,9 @@ public class WicketApplication extends WebApplication
 	{
 		super.init();
 
+		// Execute git pull on application startup
+		executeGitPull();
+
 		// needed for the styling used by the quickstart
 		getCspSettings().blocking()
 			.add(CSPDirective.STYLE_SRC, CSPDirectiveSrcValue.SELF)
@@ -51,5 +55,23 @@ public class WicketApplication extends WebApplication
 		// Please consult Wicket 10.8.0 documentation for the correct way to mount a folder for direct access.
 		// The current line has been commented out to allow compilation.
 		// getResourceSettings().addResourceFolder(new File("doc"));
+	}
+
+	private void executeGitPull() {
+		String projectPath = System.getProperty("user.dir");
+		System.out.println("Attempting to execute git pull in project path: " + projectPath);
+
+		try {
+			String command = "powershell.exe -NoExit -Command \"Set-Location -Path '" + projectPath + "'; git pull\"";
+			ProcessBuilder builder = new ProcessBuilder("cmd.exe", "/c", command);
+			builder.redirectErrorStream(true);
+
+			System.out.println("Launching terminal for git pull...");
+			Process process = builder.start();
+
+		} catch (IOException e) {
+			System.err.println("Error executing git pull command: " + e.getMessage());
+			e.printStackTrace();
+		}
 	}
 }
