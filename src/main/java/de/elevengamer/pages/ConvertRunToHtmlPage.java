@@ -58,13 +58,13 @@ public class ConvertRunToHtmlPage extends WebPage {
                 if (selectedRun != null) {
                     try {
                         String generatedHtmlFileName = "mvp_run_" + selectedRun.getRunId() + ".html";
-                        File generatedFile = new File("doc/tables/" + generatedHtmlFileName);
+                        File generatedFile = new File("docs/tables/" + generatedHtmlFileName);
                         FileWriter writer = new FileWriter(generatedFile);
                         writer.write(generateHtmlContent(selectedRun));
                         writer.close();
 
-                        // Now, add a link to doc/index.html
-                        File indexHtmlFile = new File("doc/index.html");
+                        // Now, add a link to docs/index.html
+                        File indexHtmlFile = new File("docs/index.html");
                         if (!indexHtmlFile.exists()) {
                             // Create a basic index.html if it doesn't exist
                             FileWriter indexWriter = new FileWriter(indexHtmlFile);

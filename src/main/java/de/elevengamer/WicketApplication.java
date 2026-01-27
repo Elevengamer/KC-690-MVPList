@@ -47,7 +47,7 @@ public class WicketApplication extends WebApplication
 		mountPage("/convert", ConvertRunToHtmlPage.class);
 		
 		// Mount the "doc" folder as a shared resource
-		// This allows direct access to files under /doc/ (e.g., /doc/index.html, /doc/mvp/mvprun1.html)
+		// This allows direct access to files under /docs/ (e.g., /docs/index.html, /docs/mvp/mvprun1.html)
 		// NOTE: The method for mounting static folders is causing compilation issues.
 		// Please consult Wicket 10.8.0 documentation for the correct way to mount a folder for direct access.
 		// The current line has been commented out to allow compilation.
