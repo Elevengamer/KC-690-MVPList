@@ -139,7 +139,9 @@ public class ConvertRunToHtmlPage extends WebPage {
     private String generateHtmlContent(MvpRun run) {
         StringBuilder html = new StringBuilder();
         html.append("<html>\n");
-        html.append("<head><title>MVP Run ").append(run.getRunId()).append("</title></head>\n");
+        html.append("<head><title>MVP Run ").append(run.getRunId()).append("</title>");
+        html.append("<link rel=\"stylesheet\" type=\"text/css\" href=\"../styles/style.css\">");
+        html.append("</head>\n");
         html.append("<body>\n");
         html.append("<h1>MVP Run ").append(run.getRunId()).append("</h1>\n");
         html.append("<table border=\"1\">\n");
@@ -152,7 +154,6 @@ public class ConvertRunToHtmlPage extends WebPage {
             html.append("<td>").append(player.getEventDate() != null ? player.getEventDate() : "").append("</td>");
             html.append("<td>").append(player.getHasMvp()).append("</td>");
             html.append("<td>").append(player.isMvpBanned()).append("</td>");
-            html.append("<td>").append(player.getReasonForBan() != null ? player.getReasonForBan() : "").append("</td>");
             html.append("</tr>\n");
         });
         html.append("</table>\n");
