@@ -143,6 +143,7 @@ public class ConvertRunToHtmlPage extends WebPage {
         html.append("<link rel=\"stylesheet\" type=\"text/css\" href=\"../styles/style.css\">");
         html.append("</head>\n");
         html.append("<body>\n");
+        html.append("<div class=\"maincontainer\">");
         html.append("<h1>MVP Run ").append(run.getRunId()).append("</h1>\n");
         html.append("<table border=\"1\">\n");
         html.append("<tr><th>Player Name</th><th>Event</th><th>Rank</th><th>Event Date</th><th>Has MVP</th><th>Is MVP Banned</th><th>Reason for Ban</th></tr>\n");
@@ -157,6 +158,7 @@ public class ConvertRunToHtmlPage extends WebPage {
             html.append("</tr>\n");
         });
         html.append("</table>\n");
+        html.append("</div>")
         html.append("</body>\n");
         html.append("</html>");
         return html.toString();
